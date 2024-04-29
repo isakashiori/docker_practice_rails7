@@ -16,5 +16,13 @@ services:
       - "3000:3000"
     depends_on:
       - db
+  redis:
+    image: "redis:latest"
+    ports:
+      - "6379:6379"
+    volumes:
+      - "./data/redis:/data"
+      - "./redis.conf:/opt/homebrew/etc/redis.conf"
+    command: redis-server /opt/homebrew/etc/redis.conf
 volumes:
   db-data:
