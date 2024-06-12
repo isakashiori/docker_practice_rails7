@@ -6,7 +6,7 @@ services:
     environment:
       POSTGRES_PASSWORD: password
   web:
-    build:
+    build: &web_build
       context: .
       dockerfile: Dockerfile.dev
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
@@ -24,5 +24,14 @@ services:
       - "./data/redis:/data"
       - "./redis.conf:/opt/homebrew/etc/redis.conf"
     command: redis-server /opt/homebrew/etc/redis.conf
+  sidekiq:
+    build:
+      <<: *web_build
+    command: ["bundle", "exec", "sidekiq", "-C", "config/sidekiq.yml"] #config 以下に書いた、設定ファイルを読み込んで起動
+    volumes:
+      - .:/docker_practice
+    depends_on:
+      - db
+      - redis
 volumes:
   db-data:
