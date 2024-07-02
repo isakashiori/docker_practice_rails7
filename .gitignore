@@ -31,5 +31,8 @@
 
 /public/assets
 
+# redisのdumpファイル
+data/redis/dump.rdb
+
 # Ignore master key for decrypting credentials and more.
 /config/master.key
