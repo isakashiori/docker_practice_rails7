@@ -1,3 +1,9 @@
 :concurrency: 5
 :queues:
   - default
+:scheduler:
+  :schedule:
+    naruto_word_notification:
+      cron: "0 * * * * *"
+      class: NarutoWordNotificationJob
+      queue: default

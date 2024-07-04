@@ -1,0 +1,2 @@
+class NarutoWord < ApplicationRecord
+end
