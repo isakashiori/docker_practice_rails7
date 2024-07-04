@@ -31,6 +31,9 @@ gem "jbuilder"
 gem "sidekiq"
 gem "sidekiq-scheduler"
 
+# line
+gem "line-bot-api"
+
 # 環境変数の管理
 gem "dotenv-rails"
 
