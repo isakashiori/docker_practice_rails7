@@ -1,0 +1,64 @@
+inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-performance
+  - rubocop-rails
+
+AllCops:
+  SuggestExtensions: false
+  # 最新のルールを適用する
+  NewCops: enable
+  # 何のルールに引っかかったか表示する
+  DisplayCopNames: true
+  # rubocop対象外(リポジトリ毎で調節)
+  Exclude:
+    - "Gemfile"
+    - "bin/**/*"
+    - "db/**/*"
+    - "db/schema.rb"
+    - "log/**/*"
+    - "tmp/**/*"
+    - "vendor/**/*"
+    - "config/environments/*"
+
+### ルールのカスタマイズ
+
+Metrics:
+  Enabled: false
+
+Layout:
+  Enabled: false
+
+Style:
+  Enabled: false
+
+Rails:
+  Enabled: false
+
+# ：trueおよび：falseシンボルをチェック
+Lint/BooleanSymbol:
+  Enabled: true
+
+# caseの「when」式で繰り返し条件が使用されていないことを確認
+Lint/DuplicateCaseCondition:
+  Enabled: true
+
+# ハッシュリテラルの重複キーをチェック
+Lint/DuplicateHashKey:
+  Enabled: true
+
+# 重複したメソッド定義をチェック
+Lint/DuplicateMethods:
+  Enabled: true
+
+# デバッガーまたはpryの呼び出しをチェック
+Lint/Debugger:
+  Enabled: true
+
+# = と == の指摘
+Lint/AssignmentInCondition:
+  Enabled: false
+
+# メソッド名等の命名の指摘
+Naming/PredicateName:
+  Enabled: false
