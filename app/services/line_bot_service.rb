@@ -6,7 +6,7 @@ class LineBotService
   end
 
   def perform
-    user_id = "lineのユーザーID"
+    user_id = ENV["LINE_USER_ID"]
     message= {
       type: 'text',
       text: @random_word
