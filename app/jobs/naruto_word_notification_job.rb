@@ -3,6 +3,6 @@ class NarutoWordNotificationJob < ApplicationJob
 
   def perform(*args)
     random_word = NarutoWord.all.sample(1)[0].word
-    puts random_word
+    LineBotService.new(random_word).perform
   end
 end
