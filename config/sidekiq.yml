@@ -4,6 +4,6 @@
 :scheduler:
   :schedule:
     naruto_word_notification:
-      cron: "0 * * * * *"
+      cron: "*/1 * * * *"
       class: NarutoWordNotificationJob
       queue: default
