@@ -15,6 +15,8 @@ module DockerPractice
     config.generators do |g|
       g.assets false
       g.helper false
+      g.skip_routes false
+      g.test_framework false
     end
 
     # Please, add to the `ignore` list any other `lib` subdirectories that do
