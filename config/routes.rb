@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'hp_apis/index'
   require 'sidekiq/web'
   require 'sidekiq-scheduler/web'
 
