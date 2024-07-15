@@ -1,19 +1,20 @@
 class GptReplyService
   def initialize(ask_msg)
     @ask_msg = ask_msg
+    @response = Faraday.new("https://api.openai.com") do |req|
+      req.headers["Content-Type"] = "application/json"
+      req.headers["Authorization"] = "Bearer #{ENV['OPENAI_API_KEY']}"
+      req.adapter Faraday.default_adapter
+    end
   end
 
   def perform
-    # 一旦エンドポイントは以下しか使わない予定で書いている
-    # より汎用的に書くのであればFaraday.newでコネクションのインスタンスを作成した方がいい
-    response = Faraday.post("https://api.openai.com/v1/chat/completions") do |req|
-      req.headers["Content-Type"] = "application/json"
-      req.headers["Authorization"] = "Bearer #{ENV['OPENAI_API_KEY']}"
-      req.body = {
-                    model: "gpt-3.5-turbo",
-                    messages: [{role: "user", content: @ask_msg}],
-                    temperature: 0.7
-                  }.to_json
+    response = @response.post("/v1/chat/completions") do |conn|
+      conn.body = {
+        model: "gpt-3.5-turbo",
+        messages: [{role: "user", content: @ask_msg}],
+        temperature: 0.7
+      }.to_json
     end
   end
 end
