@@ -48,6 +48,9 @@ gem "seed-fu"
 # HTTPクライアント機能
 gem "faraday"
 
+# rubyで型定義
+gem "rbs"
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
