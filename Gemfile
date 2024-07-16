@@ -51,6 +51,9 @@ gem "faraday"
 # rubyで型定義
 gem "rbs"
 
+# 型注釈のないクラスを無理やりかた型解析
+gem "typeprof"
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
