@@ -57,6 +57,9 @@ gem "typeprof"
 # 型検査を行う
 gem "steep"
 
+# partialより高速に動くコンポーネント化
+gem "view_component"
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
