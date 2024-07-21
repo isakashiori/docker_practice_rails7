@@ -57,6 +57,12 @@ gem "typeprof"
 # 型検査を行う
 gem "steep"
 
+# デバック
+gem 'pry-rails'
+
+# tailwind
+gem "tailwindcss-rails", "~> 2.6"
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
@@ -99,4 +105,3 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "tailwindcss-rails", "~> 2.6"
