@@ -1,2 +1,3 @@
-web: bash -c "rm -f tmp/pids/server.pid && bin/rails server -p 3001 -b 0.0.0.0"
 css: bin/rails tailwindcss:watch
+redis: docker-compose up redis
+sidekiq: docker-compose up sidekiq
