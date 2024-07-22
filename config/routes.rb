@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   mount Sidekiq::Web, at: '/sidekiq'
 
   resources :users, only: %i[new create]
+  resources :index_components, only: %i[index]
   get '/hp_apis', to: 'hp_apis#index'
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
