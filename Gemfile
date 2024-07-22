@@ -63,6 +63,10 @@ gem 'pry-rails'
 # tailwind
 gem "tailwindcss-rails", "~> 2.6"
 
+# partialより高速に動くコンポーネント化
+gem "view_component"
+
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
