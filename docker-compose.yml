@@ -18,13 +18,13 @@ services:
     depends_on:
       - db
     tty: true
-  # tailwind:
-  #   build: 
-  #     <<: *web_build
-  #   command: bin/rails tailwindcss:watch
-  #   tty: true
-  #   volumes:
-  #     - .:/docker_practice
+  tailwind:
+    build:
+      <<: *web_build
+    command: bin/rails tailwindcss:watch
+    tty: true
+    volumes:
+      - .:/docker_practice
   redis:
     image: "redis:latest"
     ports:
