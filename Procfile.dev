@@ -1,3 +1,2 @@
 css: bin/rails tailwindcss:watch
-redis: docker-compose up redis
-sidekiq: docker-compose up sidekiq
+
