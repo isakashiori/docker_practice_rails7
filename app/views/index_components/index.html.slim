@@ -1,2 +1,17 @@
-h1 コンポーネントテスト
-= render(StatusComponent.new(status: "1次面接"))
+div.flex.flex-row.h-screen
+  div.basis-1/4
+    div.container.bg-slate-300.h-full
+      p カレールーSIDEバー
+  div.basis-3/4
+    div.flex.flex-col
+      div.container.bg-white
+        p カレールーTOPバー
+      div.container.bg-white.mt-6
+        p 応募者の基本情報
+    div.flex.flex-row.h-screen
+      div.basis-1/4
+        div.container.bg-cyan-500.h-full
+          = render(ResumeComponent.new(args: @user))
+      div.basis-3/4
+        div.container.bg-white
+          = render(StatusComponent.with_collection(@user.statuses))
